@@ -12,7 +12,7 @@ export default class App extends Component {
         <GrandMother />
         <ScrollView style={styles.list}>
           {Array.from(Array(100).keys()).map(() => (
-            <GrandSon />
+            <GrandSon age={25} />
           ))}
         </ScrollView>
       </View>
