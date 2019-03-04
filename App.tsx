@@ -1,14 +1,20 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 
 import GrandMother from "./src/GrandMother";
+import GrandSon from "./src/GrandSon";
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         <GrandMother />
+        <ScrollView style={styles.list}>
+          {Array.from(Array(100).keys()).map(() => (
+            <GrandSon />
+          ))}
+        </ScrollView>
       </View>
     );
   }
@@ -16,19 +22,13 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 20,
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
+  list: {
+    flex: 1,
+    alignSelf: "stretch"
   }
 });
