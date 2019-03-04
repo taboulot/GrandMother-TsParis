@@ -2,11 +2,19 @@ import React from "react";
 import { Component } from "react";
 import { Text, View } from "react-native";
 
-class GrandMother extends Component {
+interface Props {
+  name: string;
+}
+
+class GrandMother extends Component<Props> {
+  static defaultProps: Partial<Props> = {
+    name: "Gertrude"
+  };
+
   public render() {
     return (
       <View>
-        <Text>Grand Mother</Text>
+        <Text>{this.props.name}</Text>
       </View>
     );
   }
