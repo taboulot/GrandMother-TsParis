@@ -2,10 +2,9 @@ import React, { ReactNode } from "react";
 import { Component } from "react";
 import { StyleSheet, Text, View, ViewStyle, TextStyle } from "react-native";
 
-import withName from "./withName";
+import withName, { InjectedProps } from "./withName";
 
-interface Props {
-  name: string;
+interface Props extends InjectedProps {
   age: number;
 }
 
